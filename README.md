@@ -1,4 +1,6 @@
-# vue-testing-guide
+# Vue Testing Guide
+
+> A set of practices for testing Vue applications.
 
 ## Project setup
 ```
