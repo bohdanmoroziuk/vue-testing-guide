@@ -14,8 +14,8 @@ describe('AppNav', () => {
   });
 
   describe('dropdown', () => {
-    it.todo('does not show dropdown');
+    it.todo('does not show a dropdown');
 
-    it.todo('shows dropdown on actions button click');
+    it.todo('shows a dropdown on actions button click');
   });
 });
