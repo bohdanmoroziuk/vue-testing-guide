@@ -1,6 +1,6 @@
-import { mount } from '@vue/test-utils';
+// import { mount } from '@vue/test-utils';
 
-import AppNav from '../../../src/components/03_conditional-rendering/AppNav.vue';
+// import AppNav from '../../../src/components/03_conditional-rendering/AppNav.vue';
 
 describe('AppNav', () => {
   describe('when the user does not have admin rights', () => {

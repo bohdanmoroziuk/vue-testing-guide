@@ -1,6 +1,6 @@
-import { mount } from '@vue/test-utils';
+// import { mount } from '@vue/test-utils';
 
-import LoginFrom from '../../../src/components/05_forms/LoginForm.vue';
+// import LoginFrom from '../../../src/components/05_forms/LoginForm.vue';
 
 describe('LoginForm', () => {
   describe('on submit button click', () => {

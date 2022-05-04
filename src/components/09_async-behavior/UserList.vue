@@ -14,12 +14,12 @@ users.value = await getUsers();
 </script>
 
 <template>
-  <div>
-    <div
+  <ul>
+    <li
       v-for="user of users"
       :key="user.id"
     >
       {{ user.name }}
-    </div>
-  </div>
+    </li>
+  </ul>
 </template>
