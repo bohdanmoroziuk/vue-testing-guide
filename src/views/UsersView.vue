@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import UserList from '@/components/09_async-behavior/UserList.vue';
+import UserList from '@/14_pinia/UsersHandler.vue';
 </script>
 
 <template>
   <div>
-    <Suspense>
-      <UserList />
-      <template #fallback>
-        Loading users...
-      </template>
-    </Suspense>
+    <UserList />
   </div>
 </template>

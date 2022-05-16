@@ -1,7 +1,7 @@
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
-const server = setupServer(
+const handlers = [
   rest.get('/api/users', (req, res, ctx) => (
     res(ctx.json([
       {
@@ -15,7 +15,9 @@ const server = setupServer(
       success: true,
     }))
   )),
-);
+];
+
+const server = setupServer(...handlers);
 
 export {
   server,
