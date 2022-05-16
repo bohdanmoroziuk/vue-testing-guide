@@ -2,7 +2,6 @@ import { InjectionKey } from 'vue';
 import { createStore, Store, useStore as baseUseStore } from 'vuex';
 
 export interface Token {
-  exp: number;
   name: string;
 }
 
@@ -14,8 +13,10 @@ const auth = {
   login(): Promise<Token> {
     return Promise.resolve({
       name: 'John Doe',
-      exp: 2651687175867,
     });
+  },
+  logout(): Promise<void> {
+    return Promise.resolve();
   },
 };
 
@@ -28,12 +29,11 @@ export default createStore<State>({
     token: null,
   },
   getters: {
-    isExpired(state) {
-      if (state.token) {
-        return state.token.exp < Date.now();
-      }
-
-      return true;
+    isLoggedIn(state) {
+      return !!state.token;
+    },
+    username(state) {
+      return state.token?.name;
     },
   },
   mutations: {
@@ -50,7 +50,9 @@ export default createStore<State>({
 
       commit('setToken', token);
     },
-    logout({ commit }) {
+    async logout({ commit }) {
+      await auth.logout();
+
       commit('resetToken');
     },
   },
